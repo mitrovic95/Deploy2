@@ -1,0 +1,13 @@
+<!-- <div class="istorijat--wrapper" *ngFor="let istorijat of istorijats">  
+  <div class="istorijat">  
+    <img class="istorijat--slike" src="{{istorijats.slike}}">  
+    <h1 class="istorijat--tekst">{{istorijats.tekst}}</h1>  
+  </div>  
+</div>  
+Radi -->
+<div *ngFor="let istorijat of istorijats; let i = index">  
+<h1> zdravo ovo je opis {{istorijat.tekst}}</h1>
+<img class="car--image" src="{{istorijat.slike.sadrzaj}}"> 
+
+
+</div>

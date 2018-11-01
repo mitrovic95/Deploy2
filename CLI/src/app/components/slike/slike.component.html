@@ -1,0 +1,89 @@
+<!-- <div class="container-body">
+    <div class="container-repertoire">
+      <div *ngFor="let slika of slike; let i = index">
+        <div>{{slika.namena}}</div>
+        <div>{{slika.datum | date:'shortDate'}}</div>
+        <img src="{{slika.sadrzaj}}">
+      </div>
+      <div class="pagination">
+        <div class="left" (click)="ocitajStranu(currentPageNumber-1)" style="margin-left: 1px"></div>
+        <div class="page" >
+          <span><span *ngIf= "currentPageNumber<10">0</span>{{currentPageNumber+1}}</span>
+        </div>
+        <div class="line" >
+            *ngFor="let number of ukupnoStranaNiz; let i=index"
+          <a [ngStyle]="{'border': currentPageNumber == i ? '2px solid #337ab7' : '#ddd'}"
+              (click)="ocitajStranu(i)" class="page-link" style="margin-left: 1px">{{i+1}}</a> 
+        </div>
+        <div class="pages">
+            <span><span *ngIf= "ukupnoStrana<10">0</span>{{ukupnoStrana}}</span>
+        </div>
+        <div class="right"  (click)="ocitajSledecuStranu()" style="margin-left: 1px"></div>
+      </div>
+    </div>
+</div> -->
+
+
+<div class="container-body">
+  <div class="container-gallery">
+    <div class="title">Galerija</div>
+    
+    <div *ngIf="vidljivostKategorije && slike" class="container-category">
+      <div class="container-img-s">
+
+        <div *ngFor="let predstava of predstave; let i = index" class="container-img">
+          <div (mouseenter)="izmenaTexta(predstava.naslov)" (mouseleave)="ugasiText()" class="okvir">
+              <img  (click)="vidljivostKategorije=false; otvoriGaleriju(predstava.naslov); vidljivostGalerije=true;" src="/assets/images/Predstave/{{predstava.slika}}.jpg">
+          </div>
+        </div>
+       
+        <div *ngIf="vidljivostTeksta" class="text">{{text}}</div>
+        <div class="container-pagination">
+          <div class="pagination">
+            <div class="left-a" (click)="ocitajPrethodnuStranu(currentPageNumber)"></div>
+            <div class="page-a">
+              <span><span *ngIf="currentPageNumber<10">0</span>{{currentPageNumber+1}}</span> 
+              
+            </div>
+            <div class="line-a">
+            </div>
+            <div class="pages-a">
+             <span><span *ngIf="ukupnoStrana<10">0</span>{{ukupnoStrana}}</span> 
+             
+            </div>
+            <div class="right-a" (click)="ocitajSledecuStranu()"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="vidljivostGalerije" class="gallery-c">
+        <div class="gallery">
+          <div class="left-side">
+            <div class="center">
+              <div (click)="prethodnaSlika(trazeneSlike[slikaUnizu])"></div>
+            </div>
+          </div>
+          <div class="center-side">
+            <div class="basic">
+              <div class="center">
+                <img *ngIf="trazeneSlike"  src="/assets/images/Predstave/{{trazeneSlike[slikaUnizu].sadrzaj}}.jpg">
+              </div>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="center">
+              <div (click)="sledecaSlika(trazeneSlike[slikaUnizu])"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="vidljivostGalerije" class="archive">
+        <div>
+          <div (click)="zatvoriGaleriju()" class=text>ZATVORI</div>
+          <div class=line></div>
+        </div>
+      </div>
+  </div>
+</div>

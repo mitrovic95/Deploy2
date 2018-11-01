@@ -1,0 +1,24 @@
+<div class="container-body">
+    <div class="container-repertoire">
+      <div *ngFor="let slika of slike; let i = index">
+        <div>{{slika.namena}}</div>
+        <div>{{slika.datum | date:'shortDate'}}</div>
+        <img src="{{slika.sadrzaj}}">
+      </div>
+      <div class="pagination">
+        <div class="left" (click)="ocitajStranu(0)" style="margin-left: 1px"></div>
+        <div class="page" >
+          <span><span *ngIf= "currentPageNumber<10">0</span>{{currentPageNumber+1}}</span>
+        </div>
+        <div class="line" >
+            <!-- *ngFor="let number of ukupnoStranaNiz; let i=index"
+          <a [ngStyle]="{'border': currentPageNumber == i ? '2px solid #337ab7' : '#ddd'}"
+              (click)="ocitajStranu(i)" class="page-link" style="margin-left: 1px">{{i+1}}</a> -->
+        </div>
+        <div class="pages">
+            <span><span *ngIf= "ukupnoStrana<10">0</span>{{ukupnoStrana}}</span>
+        </div>
+        <div class="right"  (click)="ocitajSledecuStranu()" style="margin-left: 1px"></div>
+      </div>
+    </div>
+</div>

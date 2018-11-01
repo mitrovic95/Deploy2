@@ -1,0 +1,7 @@
+<div *ngFor="let vest of vesti; let i = index">
+  <div>Naslov: {{vest.naslov}}</div>
+  <div>Opis: {{vest.opis}}</div>
+  <img class="car--image" src="{{vest.slike.sadrzaj}}">
+</div>
+
+<a routerLink="/login">LOGIN</a>

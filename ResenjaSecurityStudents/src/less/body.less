@@ -1,0 +1,1004 @@
+.container-body{
+    display: inline-table;
+    margin-left: 55px;
+    width: 100%;
+    height: 100%;
+
+    background: @color-background;
+
+    >.container-repertoire{
+        padding: 0px 130px 0px 75px;
+        >.title{
+            padding-top: 63px;
+            padding-bottom: 8px;
+            margin-bottom: 22px;
+
+            .font-navigation;
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: 200;
+            color: white;
+            border-bottom: 1px solid white;
+        }
+        >.predstave{
+            padding-top: 15px;
+            >.lista-predstava{
+                >.predstava{
+                    cursor: pointer;
+                    >.left{
+                        width: 30px;
+                        display: inline-block;
+                        padding-right: 10px;
+                        
+                        .font-text;
+                        color: @color-spot;
+                        
+                        border-right: 1px solid white;
+                        >.dan{
+                            text-align: right;
+                            
+                            font-size: 25px;
+                        }
+                        >.mesec{
+                            text-align: right;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                        }
+                    }
+                    >.right{
+                        display: inline-block;
+                        padding-left: 10px;
+    
+                        
+                        >.naziv{
+                            margin-bottom: 2px;
+    
+                            .font-title;
+                            color: white;
+                            font-size: 21px;
+    
+                        }
+                        >.opis{
+    
+                            .font-text;
+                            color: @color-spot;
+                            font-size: 13px;
+    
+                            >.kategorija{
+                                display: inline-block;
+                                margin-right: 15px;
+                            
+                            }
+                            >.vreme{
+                                display: none;
+                                position: relative;
+                                >.ukras{
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    border-top: 1px solid white;
+                                    background: white;
+                                    width: 45px;
+                                    transform: translateY(-50%);
+        
+                                }
+                                >.tacno-vreme{
+                                    margin-left: 60px;
+        
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                >.predstava:hover{
+                    .opis{
+                        >.vreme{
+                            display: inline-block;
+                        }
+                    }
+    
+                }
+    
+                >.prazna-linija{
+                    padding-left: 40px;
+                    margin-bottom: -6px;
+                    margin-top: -1px;
+                    >.left{
+                        
+                        display: inline-block;
+                        border-right: 1px solid white;
+                        height: 35px;
+                    }
+    
+                }
+            }
+        }
+        >.pagination{
+
+            margin-top: 34px;
+
+            .font-text;
+            color: @color-spot;
+            
+            >.left{
+                display: inline-block;
+                margin-right: 7px;
+
+                width: 25px;
+                height: 25px;
+
+                background: url(/assets/images/117/goLeft_false_ver1.svg) no-repeat center;
+                background-size: 23px auto;
+
+                cursor: pointer;
+            }
+            >.left:hover{
+                background: url(/assets/images/117/goLeft_true_ver1.svg) no-repeat center;
+            }
+            >.page{
+                display: inline-block;
+                >span{
+                    display: table;
+                    font-size: 18px;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+            >.line{
+                display: inline-block;
+                margin: 0px 5px;
+
+                width: 17px;
+                height: 25px;
+                
+                background: url(/assets/images/117/line_ver1.svg) no-repeat center;
+                background-size: 16px auto;
+
+            }
+            >.pages{
+                display: inline-block;
+                >span{
+                    display: table;
+                    font-size: 18px;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+            >.right{
+                display: inline-block;
+                margin-left: 7px;
+
+                width: 25px;
+                height: 25px;
+                
+                background: url(/assets/images/117/goRight_false_ver1.svg) no-repeat center;
+                background-size: 23px auto;
+
+                cursor: pointer;
+            }
+            >.right:hover{
+                background: url(/assets/images/117/goRight_true_ver1.svg) no-repeat center;
+            }
+        }
+        >.archive{
+            position: absolute;
+            margin-left: -75px;
+            bottom: 0px;
+            width: 100%;
+            >div{
+                >.text{
+                    .font-text;
+                    text-align: center;
+                    color: @color-spot;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+                >.line{
+                    margin-top: 8px;
+                    width: 50%;
+                    height: 35px;
+
+                    border-right: 1px solid white;
+                }
+            }
+        }
+    }
+
+    >.container-predstava{
+        width: 100%;
+        height: 100%;
+
+        >.predstava{
+            .make-row();
+            .clearfix();
+            margin-left: 0px;
+            margin-right: 0px;
+
+            >.container-left{
+                .make-xs-column(5);
+                .make-sm-column(5);
+                .make-md-column(5);
+                .make-lg-column(5);
+
+                >.left{
+                    .make-row();
+                    .clearfix();
+                    height: 100%;
+                    position: relative;
+
+                    >.frame-img{
+                        max-height: 100vh;
+                        overflow-x: overlay;
+                        border-right: 1px solid @color-spot;
+                    
+                        >img{
+                            width: 100%;
+                        }
+                    }
+
+                    >.frame-img::-webkit-scrollbar {
+                        width: 0px;  /* remove scrollbar space */
+                        background: transparent;  /* optional: just make scrollbar invisible */
+                    }
+
+                    >.up-frame{
+                        position: absolute;
+                        width: 100%;
+                        text-align: center;
+                        >div{
+                            display: inline-block;
+                            width: 47px;
+                            height: 60px;
+
+                            background: url(/assets/images/117/upLine_ver1.svg) no-repeat center;
+                            background-size: 47px auto;
+
+                            cursor: pointer;
+                        }
+                    }
+                    >.down-frame{
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0px;
+                        
+                        text-align: center;
+                        >div{
+                            display: inline-block;
+                            width: 47px;
+                            height: 45px;
+                            
+                            background: url(/assets/images/117/downLine_ver1.svg) no-repeat center;
+                            background-size: 47px auto;
+
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            >.container-right{
+                .make-xs-column(6);
+                .make-sm-column(6);
+                .make-md-column(6);
+                .make-lg-column(6);
+
+                >.right{
+                    .make-row();
+                    .clearfix();
+
+                    height: 100vh;
+                    position: relative;
+
+                    >.rezervacija{
+                        position: absolute;
+                        bottom: 0px;
+                        width: 100%;
+                        >div{
+                            >.text{
+                                .font-text;
+                                text-align: center;
+                                color: @color-spot;
+                                font-size: 13px;
+                                cursor: pointer;
+                            }
+                            >.line{
+                                margin-top: 8px;
+                                width: 50%;
+                                height: 35px;
+            
+                                border-right: 1px solid white;
+                            }
+                        }
+                    }
+
+                    >.content{
+                        margin-left: 50px;
+                        margin-right: 50px;
+                        margin-top: 78px;
+
+                        color: white;
+
+                        
+                        
+
+                        .reziser{
+
+                            .font-text;
+                            color: @color-spot;
+                            font-size: 15px;                            
+                        }
+                        >.naziv{
+                            margin-top: -1px;
+
+                            .font-title;
+                            color: white;
+                            font-size: 32px;     
+                        }
+                        >.ornament{
+                            margin-top: 10px;
+                        }
+                        >.sadrzaj{
+                            margin-top: 15px;
+
+                            .font-text;
+                            color:white;
+                            font-size: 13px;
+                            line-height: 1.7;
+                        }
+
+                        >.naslov-uloge{
+                            margin-top: 85px;
+                            margin-bottom: 15px;
+
+                            .font-text;
+                            text-transform: uppercase;
+                            color: @color-spot;
+                            font-size: 16px; 
+
+                        }
+                        .person { 
+                            
+                            margin: 10px 0px;
+                            margin-left: -9px;
+                            position: relative;
+        
+                            >img { 
+                                width: 75px;
+                            }
+        
+                            >.full-name {
+                                display: inline-block;
+                                margin-left: 15px;
+                                .font-text;
+                                font-size:15px;
+                                color: white;
+                                
+                                >h2{
+                                    position: absolute;
+                                    margin-top: -55px;
+                                    .font-text;
+                                    font-size: 14px;
+                                    font-weight: normal;
+                                    color: @color-spot;
+                                    
+                                }
+                                >h1{
+                                    position: absolute;
+                                    margin-top: -35px;
+                                    .font-text;
+                                    font-size: 14px;
+                                    font-weight: normal;
+                                    color: white;
+                                    
+                                }
+                            }
+                        }
+
+                        .uloga{
+                            margin-top: 10px;
+                            >.naziv-uloga{
+                                margin-top: 5px;
+
+                                .font-navigation;
+                                color: white;
+                                font-size: 16px;     
+                            }
+                            >.osoba-uloga{
+                                margin-top: 2px;
+
+                                .font-text;
+                                color: @color-spot;
+                                font-size: 14px;
+                            }
+                        }
+
+                        
+                    }
+                }
+
+                
+            }
+        }
+    }
+
+    >.container-contact{
+        padding: 0px 130px 0px 75px;
+        >.title{
+            padding-top: 63px;
+            padding-bottom: 8px;
+            margin-bottom: 22px;
+
+            .font-navigation;
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: 200;
+            color: white;
+            border-bottom: 1px solid white;
+        }
+        >.letter{
+            margin: 9% auto 0px auto;
+            width: 800px;
+            height: 400px;
+            border: 1px solid @color-spot;
+
+            padding: 28px;
+            >.left{
+                display: inline-block;
+                width: 50%;
+                height: 100%;
+                border-right: 1px solid @color-spot;
+
+                >.message{
+                    padding-right: 38px;
+                    >.massage-label{
+                        .font-text;
+                        font-size: 14px;
+                        font-style: italic;
+                        color: white;
+                    }
+                    >.massage-input{
+                        margin-top: 2px;
+                        padding: 5px;
+                        width: 100%;
+                        height: 187px;
+                        color:white;
+                        border: 1px solid @color-spot;
+                        background: transparent;
+                        resize: none;
+
+                        .font-text;
+                        font-size: 14px;
+                        font-style: italic;
+                    }
+
+                    >textarea:focus {
+                        outline-width: 0;
+                    }
+                }
+
+                >.container-mail {
+                    margin-top: 31px;
+                    padding-right: 23px;
+                    >label{
+                        display: inline-block;
+                        width: 112px;
+                        padding-bottom: 1px;
+
+                        .font-text;
+                        font-size: 14px;
+                        font-style: italic;
+                        color: white;
+
+                        border-bottom: 1px solid @color-spot;
+                    }
+                    >input{
+                        width: 247px;
+                        padding-right: 14px;
+                        text-align: right;
+
+                        .font-text;
+                        font-size: 14px;
+                        font-style: italic;
+                        color: white;
+
+                        background: transparent;
+                        border: none;
+                        border-bottom: 1px solid @color-spot;
+
+                    }
+                    >input:focus {
+                        outline-width: 0;
+                    }
+                }
+                >.container-name {
+                    margin-top: 15px;
+                    padding-right: 23px;
+                    >label{
+                        display: inline-block;
+                        width: 68px;
+                        padding-bottom: 1px;
+
+                        .font-text;
+                        font-size: 14px;
+                        font-style: italic;
+                        color: white;
+
+                        border-bottom: 1px solid @color-spot;
+                    }
+                    >div{
+                        width: 305px;
+                        display: inline-block;
+                        border-bottom: 1px solid @color-spot;
+
+                        >input{
+                            width: 274px;
+                            margin-bottom: -16px;
+                            padding-left: 17px;
+                            padding-right: 14px;
+    
+                            font-family: 'Tuesday Night MP';
+                            text-align: right;
+                            font-size: 25px;
+                            color: white;
+    
+                            background: transparent;
+                            border: none;
+                        }
+
+                        >input:focus {
+                            outline-width: 0;
+                        }
+                    }
+                }
+                >.conf{
+                    margin-top: 42px;
+                    >button{
+                        height: 33px;
+                        width: 100px;
+                        margin: -20px -50px;
+                        position: relative;
+                        top: 50%;
+                        left: 50%;
+
+                        background: transparent;
+                        border: 1px solid @color-spot;
+
+                        .font-text;
+                        font-size: 14px;
+                        color: white;
+                        
+                    }
+                    >button:hover{
+                        background-color: @color-spot;
+                    }
+                }
+            }
+            >.right{
+                position: relative;
+                display: inline-block;
+                margin-left: 38px;
+                margin-top: 0px;
+
+
+                >.container-stamp{
+                    position: absolute;
+                    width: 67px;
+                    height: 83px;
+                    left: 292px;
+                    top: -228px;
+
+                    .font-text;
+                    font-size: 11px;
+                    letter-spacing: 0.01em;
+                    color: @color-spot;
+
+                    border: 1px solid @color-spot;
+
+
+                    >.stamp{
+                        -webkit-transform: rotate(90deg);
+                        -moz-transform: rotate(90deg);
+                        -ms-transform: rotate(90deg);
+                        transform: rotate(90deg);
+
+                        margin-left: 22px;
+                        margin-top: 14px;
+
+                        >.line{
+                            margin-top: 3px;
+                            width: 33px;
+                            border-top: 1px solid @color-spot;
+                        }
+                    }
+
+                }
+
+                >.line{
+                    width: 10px;
+                    border-top: 1px solid @color-spot;
+
+                }
+                >.t-data{
+                    margin-top: 10px;
+                    .font-text;
+                    font-size: 14px;
+                    letter-spacing: 0.02rem;
+
+                    >.data-label{
+                        color: white;
+                    }
+                    >.data-text{
+                        margin-top: 3px;
+                        font-style: italic;
+                        color: @color-spot;
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    >.container-ensemble{
+        padding: 0px 130px 0px 75px;
+        >.title{
+            padding-top: 63px;
+            padding-bottom: 8px;
+            margin-bottom: 22px;
+
+            .font-navigation;
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: 200;
+            color: white;
+            border-bottom: 1px solid white;
+        }
+        >.content {  
+            .make-row();
+            .clearfix();
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 60px;
+            height: calc(100vh - 205px);
+            
+            .left { 
+                .make-xs-column(6);
+                .make-sm-column(6);
+                .make-md-column(6);
+                .make-lg-column(6);
+
+                height: 100%;
+                
+                border-right: 1px solid @color-spot;
+        
+                >.basic { 
+                    text-align: center;
+                    position: relative;
+
+                    >.center{
+                        position: absolute;
+                        top: calc(50vh - 235px);
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+
+                        >.img { 
+                            width: 240px;
+                        }
+            
+                        >.name-s {
+                            margin-top: -145px;
+                            text-align: center;
+                            margin-left: 266px;
+    
+                            font-family: 'Tuesday Night MP';
+                            font-size: 30px;
+                            color: white;
+            
+                        }
+            
+                        >.information { 
+                            margin-left: 337px;
+                            margin-top: -4px;
+    
+                            >.line {
+                                display: inline-block;  
+                                margin-right: 4px;
+                                >div{
+                                    margin-top: -5px;
+                                    width: 45px; 
+                                    
+                                    border-top: 1px solid @color-spot;
+                                }
+                            }
+            
+                            >.name-full { 
+                                display: inline-block;
+                                
+                                .font-text;
+                                font-size: 14px;
+                                color: @color-spot;
+            
+                            }
+            
+                            >.line-v { 
+                                display: inline-block;
+                                margin-right: 10px;
+                                width: 10px;
+                                height: 11px;
+                                border-right: 2px solid @color-spot;
+            
+                            }
+            
+                            >.position { 
+                                display: inline-block;
+                                .font-text;
+                                text-transform: uppercase;
+                                font-size: 14px;
+                                color: white;
+            
+                            }
+                        }
+
+                    }
+
+                    
+                }
+        
+                >.mail-address { 
+                    position: absolute;
+                    text-align: center;
+                    bottom: 15px;
+                    width: 100%;
+
+                    .font-text;
+                    color: #cccccc;
+                    font-size: 14px;
+
+                    >.small-line{
+                        display: inline-block;
+                        height: 10px;
+                        width: 10px;
+                        margin-right: 10px;
+                        border-right: 2px solid @color-spot;
+                    }
+                    >.text{
+                        display: inline-block;
+                    }
+                }
+            }
+        
+            >.right { 
+                .make-xs-column(5);
+                .make-sm-column(5);
+                .make-md-column(5);
+                .make-lg-column(5);
+                
+                margin-left: -1px;
+        
+                >.container-list {
+                    .make-row();
+                    .clearfix(); 
+
+                    margin-left: 60px;
+        
+                    >.title { 
+                        display: inline-block;
+                        margin-bottom: 15px;
+                        margin-right: 10px;
+                        .font-text;
+                        font-size:15px;
+                        color: @color-spot;
+                    }
+        
+                    >.list { 
+                        height: 100%;
+                        overflow-x: overlay;
+        
+                        >.person { 
+                            
+                            margin: 10px 0px;
+                            position: relative;
+        
+                            >img { 
+                                width: 75px;
+                            }
+        
+                            >.full-name {
+                                display: inline-block;
+                                margin-left: 15px;
+                                .font-text;
+                                font-size:15px;
+                                color: white;
+
+                                >h1{
+                                    position: absolute;
+                                    margin-top: -45px;
+                                    .font-text;
+                                    font-size: 14px;
+                                    font-weight: normal;
+                                    color: white;
+                                    
+                                }
+                            }
+                        }
+
+                        .person:hover{
+                            background-color: #36312B;
+                            cursor: pointer;
+                        }
+                    }
+
+                    >.list::-webkit-scrollbar {
+                        width: 0px;  /* remove scrollbar space */
+                        background: transparent;  /* optional: just make scrollbar invisible */
+                    }
+        
+                    >.pagination{
+
+                        margin-top: 15px;
+                        margin-left: 15px;
+
+                        .font-text;
+                        color: @color-spot;
+                        
+                        >.left-a{
+                            display: inline-block;
+                            margin-right: 7px;
+            
+                            width: 25px;
+                            height: 25px;
+            
+                            background: url(/assets/images/117/goLeft_false_ver1.svg) no-repeat center;
+                            background-size: 23px auto;
+            
+                            cursor: pointer;
+                        }
+                        >.left-a:hover{
+                            background: url(/assets/images/117/goLeft_true_ver1.svg) no-repeat center;
+                        }
+                        >.page-a{
+                            display: inline-block;
+                            >span{
+                                display: table;
+                                font-size: 18px;
+                                font-family: Arial, Helvetica, sans-serif;
+                            }
+                        }
+                        >.line-a{
+                            display: inline-block;
+                            margin: 0px 5px;
+            
+                            width: 17px;
+                            height: 25px;
+                            
+                            background: url(/assets/images/117/line_ver1.svg) no-repeat center;
+                            background-size: 16px auto;
+            
+                        }
+                        >.pages-a{
+                            display: inline-block;
+                            >span{
+                                display: table;
+                                font-size: 18px;
+                                font-family: Arial, Helvetica, sans-serif;
+                            }
+                        }
+                        >.right-a{
+                            display: inline-block;
+                            margin-left: 7px;
+            
+                            width: 25px;
+                            height: 25px;
+                            
+                            background: url(/assets/images/117/goRight_false_ver1.svg) no-repeat center;
+                            background-size: 23px auto;
+            
+                            cursor: pointer;
+                        }
+                        >.right-a:hover{
+                            background: url(/assets/images/117/goRight_true_ver1.svg) no-repeat center;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    >.container-about {
+        padding: 0px 130px 0px 75px; 
+        >.title {
+            padding-top: 63px;
+            padding-bottom: 8px;
+            margin-bottom: 22px;
+
+            .font-navigation;
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: 200;
+            color: white;
+            border-bottom: 1px solid white; 
+        }
+        >.content {
+           
+            margin-top: 80px; 
+    
+            >.left {
+                display: inline-block;
+                float: left;
+                width: 40%;
+                margin-left: 5%;
+                margin-bottom: 30px;
+                
+    
+                >.text {
+                    .make-row();
+                    .clearfix;
+                     margin-left: 0px;
+                    margin-right: 0px;
+                    
+                    .font-text;
+                    font-weight: 300;
+                    color: white;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                    line-height: 1.7;
+                    
+                }
+            }
+
+            
+    
+            >.right {
+                display: inline-block;
+                float: right;
+                width: 40%;
+                margin-right: 5%;
+                >.text {
+                    .make-row();
+                    .clearfix;
+                     margin-left: 0px;
+                    margin-right: 0px;
+                    
+                    .font-text;
+                    font-weight: 300;
+                    color: white;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                    line-height: 1.7;
+                }
+            }
+    
+            >.container-img {
+                width: 100%;
+                text-align: center; 
+                >.box {      
+                    width: 40%;
+                    margin:auto;
+                    position: relative;
+
+                    .box-const{
+                        width: 122%;
+
+                    }
+                    >.box-frame{
+                        position: absolute;
+                        top: -20px;
+                        left: -20px;
+                        width: 100%;
+                        height: auto;
+                        border: 1px solid @color-spot;
+                        width: 90%;
+                    }
+                    >.img { 
+                        position: absolute;
+                        top: 10px;
+                        left: 0px;
+                        width: 100%;
+                        height: auto;
+        
+                    }
+                }
+            }
+        }
+    }
+}

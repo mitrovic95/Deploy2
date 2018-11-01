@@ -1,0 +1,110 @@
+<div class="container-body">
+    <div class="container-ensemble" *ngIf="osobe">
+      <div class="title">Ansambl</div>
+      <div class="content">
+        <div class="left" (mouseover)="imgVersion = 2" (mouseout)="imgVersion = 1">
+          <div class="basic">
+            <div class="center">
+              <img class="img" src="/assets/images/Ensemble/Big/img_{{izabranaOsoba.id}}_{{imgVersion}}.png">
+              <div class="name-s">{{izabranaOsoba.ime}} {{izabranaOsoba.prezime}}</div>
+              <div class="information">
+                <div class="line">
+                  <div></div>
+                </div>
+                <div class="name-full">{{izabranaOsoba.ime}} {{izabranaOsoba.prezime}}</div>
+                <div class="line-v"></div>
+                <div class="position">{{izabranaOsoba.opis}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="mail-address">
+            <div class="text">Kontakt</div>
+            <div class="small-line"></div>
+            <div class="text">{{izabranaOsoba.mejl}}</div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="container-list">
+            <div class="title">GLUMCI</div>
+            <div class="title">/</div>
+            <div class="title">Dramaturzi</div>
+            <div class="list" *ngFor="let osoba of osobe; let i = index">
+              <div class="person" (click)=" promenaIzabraneOsobe(osoba)">
+                <img class="img" src="/assets/images/Ensemble/Small/img_{{osoba.id}}_1.png">
+                <div class="full-name">
+                  <h1>{{osoba.ime}} {{osoba.prezime}}</h1>
+                </div>
+              </div>
+            </div>
+            <div class="pagination">
+              <div class="left-a" (click)="ocitajStranu(currentPageNumber-1)" ></div>
+              <div class="page-a">
+                <span>
+                  <span *ngIf="currentPageNumber<10">0</span>{{currentPageNumber+1}}</span>
+              </div>
+              <div class="line-a">
+              </div>
+              <div class="pages-a">
+                <span>
+                  <span *ngIf="ukupnoStrana<10">0</span>{{ukupnoStrana}}</span>
+              </div>
+              <div class="right-a" (click)="ocitajSledecuStranu()" ></div>
+            </div>
+  
+            <!-- <div class="pagination">
+              <div class="left-a"></div>
+              <div class="page-a">
+                <span>01</span>
+              </div>
+              <div class="line-a"></div>
+              <div class="pages-a">
+                <span>05</span>
+              </div>
+              <div class="right-a"></div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--
+  
+  <div *ngFor="let osoba of osobe; let i = index">
+    <div>{{osoba.ime}}</div>
+    <div>{{osoba.prezime}}</div>
+    <div>{{osoba.slika1}}</div>
+    <div>{{osoba.slika2}}</div>
+    <div>{{osoba.opis}}</div>
+    <div>{{osoba.prioritet}}</div>
+    <div>{{osoba.brojTelefona}}</div>
+    <div>{{osoba.mejl}}</div>
+  </div>
+  -->
+  <!-- export interface Osoba {
+    id?: number;
+    ime: string;
+    prezime: string;
+    slika1: string;
+    slika2: string;
+    opis: string;
+    prioritet: number;
+    brojTelefona: number;
+    mejl: string;
+  } -->

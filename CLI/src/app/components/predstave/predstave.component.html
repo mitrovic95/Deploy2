@@ -1,0 +1,43 @@
+<div class="container-body">
+  <div class="container-archive">
+    <div class="title">Predstave</div>
+    <div class="predstave">
+      <div *ngFor="let predstava of predstave; let i = index let last = last" class="lista-predstava">
+        <div class="predstava">
+          <div class="left"><div></div></div>
+          <div class="right">
+            <div class="naziv" [routerLink]="['/predstava',predstava.id]">{{predstava.naslov}}</div>
+            <div class="opis">
+              <div class="kategorija" [routerLink]="['/predstava',predstava.id]">{{kategorija(predstava.opis)}} </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!last" class="prazna-linija">
+          <div class="left"></div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination">
+      <div class="left" (click)="ocitajStranu(currentPageNumber-1)"></div>
+      <div class="page">
+        <span>
+          <span *ngIf="currentPageNumber<10">0</span>{{currentPageNumber+1}}</span>
+      </div>
+      <div class="line"></div>
+      <div class="pages">
+        <span>
+          <span *ngIf="ukupnoStrana<10">0</span>{{ukupnoStrana}}</span>
+      </div>
+      <div class="right" (click)="ocitajSledecuStranu()"></div>
+    </div>
+    <div class="archive">
+      <div>
+        <div class=text [routerLink]="['/repertoar']">REPERTOAR</div>
+        <div class=line></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,81 @@
+<div class="container-body">
+    <div class="container-predstava" *ngIf="predstavaOsobe">
+        <div class="predstava">
+            <div class="container-left">
+                <div class="left">
+                    <div class="up-frame">
+                        <div></div>
+                    </div>
+                    <div class="down-frame">
+                        <div></div>
+                    </div>
+                    <div #panel class="frame-img">
+                        <div *ngFor="let s of slike; let i = index">
+                            <div *ngIf="provera(s.namena, predstavaOsobe[0].predstava.naslov)">
+                                <img  src="/assets/images/Predstave/{{s.sadrzaj}}.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-right">
+                <div class="right">
+                    <div class="content">
+                        <div *ngFor="let a of predstavaOsobe; let i = index">
+                            <div class="reziser" *ngIf="a.uloga=='Reziser'">{{a.osoba.ime}} {{a.osoba.prezime}}</div>
+                        </div>
+                        <div class="naziv">{{predstavaOsobe[0].predstava.naslov}}</div>
+                        <div class="ornament"></div>
+                        <div class="sadrzaj">{{predstavaOsobe[0].predstava.opis}}
+                        </div>
+                        <div class="naslov-uloge">ULOGE:</div>
+                        <div *ngFor="let a of predstavaOsobe; let i = index">
+                            <div class="person" *ngIf="a.uloga!='Reziser'">
+                                <img class="img" src="/assets/images/Ensemble/Small/img_{{a.osoba.id}}_1.png">
+                                <div class="full-name">
+                                    <h2>{{a.uloga}}</h2>
+                                    <h1>{{a.osoba.ime}} {{a.osoba.prezime}}</h1>
+                                </div>
+                            </div>
+                            <!-- <div class="uloga">
+                                <div class="naziv-uloga">Дон Рамиро, принц Салерна</div>
+                                <div class="osoba-uloga">Саша Младов</div>
+                            </div> -->
+                            <!-- <div class="uloga">
+                                <div class="naziv-uloga">Дон Рамиро, принц Салерна</div>
+                                <div class="osoba-uloga">Саша Младов</div>
+                            </div> -->
+                            <!-- <div class="uloga">
+                                <div class="naziv-uloga">Дон Рамиро, принц Салерна</div>
+                                <div class="osoba-uloga">Саша Младов</div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="rezervacija">
+                        <div>
+                            <div class=text [routerLink]="['/kontakt']">REZERVIŠI</div>
+                            <div class=line></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngIf="predstavaOsobe"> 
+    <div *ngFor="let a of predstavaOsobe; let i = index">
+        <div style="margin-left: 100px;">{{a.uloga}}</div>
+        <div style="margin-left: 100px;">{{a.osoba.ime}}</div>
+        <div style="margin-left: 100px;">{{a.predstava.naslov}}</div>
+    </div>
+</div> -->
